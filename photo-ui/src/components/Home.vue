@@ -13,19 +13,19 @@ export default {
     return {
       cards: [
         {
-          message: 'hello'
+          imgsrc: 'static/img/IMG_1075-01.jpg'
         },
         {
-          message: 'box 1'
+          imgsrc: 'static/img/IMG_1081-01.jpg'
         },
         {
-          message: 'box 2'
+          imgsrc: 'static/img/IMG_1106-01.jpg'
         },
         {
-          message: 'box 3'
+          imgsrc: 'static/img/IMG_1128-02.jpg'
         },
         {
-          message: 'box 4'
+          imgsrc: 'static/img/IMG_1129-01.jpg'
         }
       ]
     }
@@ -38,5 +38,8 @@ export default {
 .home{
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 </style>

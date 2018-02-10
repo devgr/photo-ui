@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <p>Hello app!</p>
     <router-view/>
   </div>
 </template>
@@ -20,6 +19,7 @@ html {
 }
 body {
   margin: 0;
+  min-width: 480px;
 }
 #app {
 
