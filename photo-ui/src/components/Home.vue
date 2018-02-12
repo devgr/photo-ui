@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Card v-for="(config, key) in cards" :config="config" :key="key"></Card>
+    <card v-for="(config, key) in cards" :config="config" :key="key"></card>
   </div>
 </template>
 
@@ -13,19 +13,28 @@ export default {
     return {
       cards: [
         {
-          imgsrc: 'static/img/IMG_1075-01.jpg'
+          type: 'content',
+          view: 'header'
         },
         {
-          imgsrc: 'static/img/IMG_1081-01.jpg'
+          type: 'image',
+          imgSrc: 'static/img/IMG_1075-01.jpg'
         },
         {
-          imgsrc: 'static/img/IMG_1106-01.jpg'
+          type: 'image',
+          imgSrc: 'static/img/IMG_1081-01.jpg'
         },
         {
-          imgsrc: 'static/img/IMG_1128-02.jpg'
+          type: 'image',
+          imgSrc: 'static/img/IMG_1106-01.jpg'
         },
         {
-          imgsrc: 'static/img/IMG_1129-01.jpg'
+          type: 'image',
+          imgSrc: 'static/img/IMG_1128-02.jpg'
+        },
+        {
+          type: 'image',
+          imgSrc: 'static/img/IMG_1129-01.jpg'
         }
       ]
     }

@@ -1,15 +1,19 @@
 <template>
   <div class="wrapper">
     <div class="card">
-      <span class="helper"></span><img :src="config.imgsrc" />
+      <image-card v-if="config.type == 'image'" :config="config"/>
+      <content-card v-else-if="config.type == 'content'" :config="config"/>
     </div>
   </div>
 </template>
 
 <script>
+import ImageCard from './ImageCard'
+import ContentCard from './ContentCard'
 export default {
   name: 'Card',
   props: ['config'],
+  components: { ImageCard, ContentCard },
   data () {
     return {}
   }
@@ -23,23 +27,8 @@ export default {
 }
 .card{
   height: 400px;
-  /*width: 476px;*/
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin: 4px 2px;
   white-space: nowrap;
   text-align: center;
-}
-.card>img{
-  max-width: 476px;
-  max-height: 400px;
-  vertical-align: middle;
-  border-radius: 5px;
-}
-.helper{
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
 }
 </style>

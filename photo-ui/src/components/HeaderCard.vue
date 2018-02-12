@@ -1,0 +1,34 @@
+<template>
+  <div class="header-card">
+    <h1>George Darling Photography</h1>
+    <p class="subtitle">Nashville, TN based photographer for portraits, events, and music.</p>
+    <br />
+    <a v-on:click="contact();" class="btn">Contact</a>
+    <a class="btn" href="https://www.instagram.com/georgedphotos/">Instagram</a>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HeaderCard',
+  props: ['config'],
+  data () {
+    return {}
+  },
+  methods: {
+    contact () {
+      
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.header-card{
+  white-space: normal;
+}
+.subtitle{
+  font-style: italic;
+}
+</style>
