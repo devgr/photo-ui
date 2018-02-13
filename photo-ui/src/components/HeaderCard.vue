@@ -5,6 +5,7 @@
     <br />
     <a v-on:click="contact();" class="btn">Contact</a>
     <a class="btn" href="https://www.instagram.com/georgedphotos/">Instagram</a>
+    <br />
   </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     contact () {
-      
+
     }
   }
 }

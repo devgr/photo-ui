@@ -45,8 +45,17 @@ body {
 }
 .btn:hover {
   cursor: pointer;
+  background-color: #ddd;
 }
 .btn:active {
   background-color: #aaa;
+}
+img.v-aligned, div.v-aligned{
+  vertical-align: middle;
+}
+span.v-aligned{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 </style>

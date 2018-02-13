@@ -25,11 +25,13 @@ div.outer{
   height:400px;
   margin: auto;
   padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 div.inner{
   border: 1px solid #555;
   border-radius: 5px;
   padding: 5px;
-  height: 388px;
 }
 </style>
