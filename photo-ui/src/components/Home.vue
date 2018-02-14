@@ -6,38 +6,12 @@
 
 <script>
 import Card from './Card'
+import dataManager from '@/services/data'
 export default {
   name: 'Home',
   components: { Card },
   data () {
-    return {
-      cards: [
-        {
-          type: 'content',
-          view: 'header'
-        },
-        {
-          type: 'image',
-          imgSrc: 'static/img/IMG_1075-01.jpg'
-        },
-        {
-          type: 'image',
-          imgSrc: 'static/img/IMG_1081-01.jpg'
-        },
-        {
-          type: 'image',
-          imgSrc: 'static/img/IMG_1106-01.jpg'
-        },
-        {
-          type: 'image',
-          imgSrc: 'static/img/IMG_1128-02.jpg'
-        },
-        {
-          type: 'image',
-          imgSrc: 'static/img/IMG_1129-01.jpg'
-        }
-      ]
-    }
+    return dataManager.data
   }
 }
 </script>

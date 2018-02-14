@@ -1,5 +1,5 @@
 <template>
-  <div class="header-card">
+  <div class="card-body">
     <h1>George Darling Photography</h1>
     <p class="subtitle">Nashville, TN based photographer for portraits, events, and music.</p>
     <br />
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import dataManager from '@/services/data'
 export default {
   name: 'HeaderCard',
   props: ['config'],
@@ -18,7 +19,7 @@ export default {
   },
   methods: {
     contact () {
-
+      dataManager.contact()
     }
   }
 }
@@ -26,10 +27,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.header-card{
-  white-space: normal;
-}
-.subtitle{
-  font-style: italic;
-}
+
 </style>

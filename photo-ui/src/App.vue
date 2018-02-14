@@ -13,7 +13,7 @@ export default {
 <style>
 html {
   margin: 0;
-  color: #CCC;
+  color: #ddd;
   font-family: 'Roboto', sans-serif;
 }
 h1 {
@@ -35,7 +35,7 @@ body {
   border: 1px solid #888;
   border-radius: 12px;
   color: #383838;
-  background-color: #ccc;
+  background-color: #ddd;
   margin: auto;
   width: 150px;
   padding: 0;
@@ -45,7 +45,7 @@ body {
 }
 .btn:hover {
   cursor: pointer;
-  background-color: #ddd;
+  background-color: #eee;
 }
 .btn:active {
   background-color: #aaa;
@@ -57,5 +57,11 @@ span.v-aligned{
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+}
+.card-body{
+  white-space: normal;
+}
+.subtitle{
+  font-style: italic;
 }
 </style>
