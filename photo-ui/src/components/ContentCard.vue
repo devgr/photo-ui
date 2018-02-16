@@ -25,7 +25,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div.outer{
-  width:472px;
+  width:400px;
   height:400px;
   margin: auto;
   padding: 2px;

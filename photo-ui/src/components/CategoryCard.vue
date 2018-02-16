@@ -38,7 +38,7 @@ div.background-img{
 div.cover{
   height: 100%;
   width: 100%;
-  background-color: #000000bb;
+  background-color: #00000099;
   border-radius: 5px;
 }
 div.cover:hover{
