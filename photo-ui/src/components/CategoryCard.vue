@@ -33,6 +33,7 @@ div.background-img{
   height: 400px;
   border-radius: 5px;
   box-shadow: 0px 0px 25px #111;
+  margin: auto;
 }
 div.cover{
   height: 100%;
