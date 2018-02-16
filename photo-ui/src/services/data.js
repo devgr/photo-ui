@@ -1,47 +1,36 @@
+import * as firebase from 'firebase'
+
 class DataManager {
   constructor () {
     this.data = {
       cards: []
     }
-    this.home()
+  }
+
+  init () {
+    this.database = firebase.database()
+    this.database.ref('/views').once('value').then((snapshot) => {
+      this.allViews = snapshot.val()
+      this.home()
+    })
   }
 
   home () {
-    this.data.cards = [
-      {
-        type: 'content',
-        view: 'header'
-      },
-      {
-        type: 'image',
-        imgSrc: 'static/img/IMG_1075-01.jpg'
-      },
-      {
-        type: 'image',
-        imgSrc: 'static/img/IMG_1081-01.jpg'
-      },
-      {
-        type: 'image',
-        imgSrc: 'static/img/IMG_1106-01.jpg'
-      },
-      {
-        type: 'image',
-        imgSrc: 'static/img/IMG_1128-02.jpg'
-      },
-      {
-        type: 'image',
-        imgSrc: 'static/img/IMG_1129-01.jpg'
-      }
-    ]
+    this.data.cards = this.allViews.home
   }
 
   contact () {
-    this.data.cards = [
-      {
-        type: 'content',
-        view: 'contact'
-      }
-    ]
+    this.data.cards = this.allViews.contact
+  }
+
+  toView (viewName) {
+    if (this.allViews.hasOwnProperty(viewName)) {
+      this.data.cards = this.allViews[viewName]
+    }
+  }
+
+  submitContact () {
+
   }
 }
 

@@ -10,7 +10,7 @@
     <textarea v-model="message" v-on:blur="checkMessage();"
       :class="{ reject: invalidMessage }" placeholder="Message" />
     <br />
-    <a v-on:click="submitContact();" class="btn">Submit</a>
+    <a v-on:click="submitContact();" class="btn" :class="{ success: submitSuccess }">Submit</a>
   </div>
 </template>
 
@@ -26,7 +26,8 @@ export default {
       message: '',
       invalidName: false,
       invalidEmail: false,
-      invalidMessage: false
+      invalidMessage: false,
+      submitSuccess: false
     }
   },
   methods: {
@@ -34,10 +35,11 @@ export default {
       dataManager.home()
     },
     submitContact () {
-      if (this.checkName || this.checkEmail || this.checkMessage) {
+      if (this.checkName() || this.checkEmail() || this.checkMessage()) {
         return false
       }
       dataManager.submitContact()
+      this.submitSuccess = true
     },
     checkName () {
       if (!this.name || this.name.length === 0) {
@@ -48,7 +50,8 @@ export default {
       return this.invalidName
     },
     checkEmail () {
-      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      // https://stackoverflow.com/questions/46155/how-can-an-email-address-be-validated-in-javascript
+      let re = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
       this.invalidEmail = !re.test(String(this.email).toLowerCase())
       return this.invalidEmail
     },

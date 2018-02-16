@@ -5,6 +5,18 @@
 </template>
 
 <script>
+import * as firebase from 'firebase'
+
+var config = {
+  apiKey: 'AIzaSyAJmsIRLUBUXxBn1yqQLnEb115kHLuernU',
+  authDomain: 'photo-6b67d.firebaseapp.com',
+  databaseURL: 'https://photo-6b67d.firebaseio.com',
+  projectId: 'photo-6b67d',
+  storageBucket: 'photo-6b67d.appspot.com',
+  messagingSenderId: '9282811773'
+}
+firebase.initializeApp(config)
+
 export default {
   name: 'App'
 }
@@ -50,7 +62,7 @@ body {
 .btn:active {
   background-color: #aaa;
 }
-img.v-aligned, div.v-aligned{
+img.v-aligned, div.v-aligned, h1.v-aligned{
   vertical-align: middle;
 }
 span.v-aligned{

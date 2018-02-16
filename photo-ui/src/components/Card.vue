@@ -2,6 +2,7 @@
   <div class="wrapper">
     <div class="card">
       <image-card v-if="config.type == 'image'" :config="config"/>
+      <category-card v-else-if="config.type == 'category'" :config="config"/>
       <content-card v-else-if="config.type == 'content'" :config="config"/>
     </div>
   </div>
@@ -10,10 +11,11 @@
 <script>
 import ImageCard from './ImageCard'
 import ContentCard from './ContentCard'
+import CategoryCard from './CategoryCard'
 export default {
   name: 'Card',
   props: ['config'],
-  components: { ImageCard, ContentCard },
+  components: { ImageCard, ContentCard, CategoryCard },
   data () {
     return {}
   }
