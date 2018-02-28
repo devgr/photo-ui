@@ -16,6 +16,7 @@
   "dependencies": {
     "firebase": "^4.10.0",
     "vue": "^2.5.2",
+    "vue-resource": "^1.4.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

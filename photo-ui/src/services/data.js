@@ -1,4 +1,5 @@
 import * as firebase from 'firebase'
+import Vue from 'vue'
 
 class DataManager {
   constructor () {
@@ -29,8 +30,9 @@ class DataManager {
     }
   }
 
-  submitContact () {
-
+  submitContact (name, email, message) {
+    let data = {name, email, message}
+    return Vue.http.post('/submit', data)
   }
 }
 

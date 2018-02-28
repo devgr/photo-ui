@@ -10,7 +10,7 @@
     <textarea v-model="message" v-on:blur="checkMessage();"
       :class="{ reject: invalidMessage }" placeholder="Message" />
     <br />
-    <a v-on:click="submitContact();" class="btn" :class="{ success: submitSuccess }">Submit</a>
+    <a v-on:click="submitContact();" class="btn" :class="{ success: submitSuccess, reject: submitFailure }">Submit</a>
   </div>
 </template>
 
@@ -27,7 +27,8 @@ export default {
       invalidName: false,
       invalidEmail: false,
       invalidMessage: false,
-      submitSuccess: false
+      submitSuccess: false,
+      submitFailure: false
     }
   },
   methods: {
@@ -38,8 +39,13 @@ export default {
       if (this.checkName() || this.checkEmail() || this.checkMessage()) {
         return false
       }
-      dataManager.submitContact()
-      this.submitSuccess = true
+      dataManager.submitContact(this.name, this.email, this.message).then(() => {
+        this.submitSuccess = true
+        this.submitFailure = false
+      }, () => {
+        this.submitFailure = true
+        this.submitSuccess = false
+      })
     },
     checkName () {
       if (!this.name || this.name.length === 0) {
