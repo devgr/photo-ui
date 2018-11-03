@@ -5,6 +5,7 @@
     <br />
     <a v-on:click="contact();" class="btn">Contact</a>
     <a class="btn" href="https://www.instagram.com/georgedphotos/">Instagram</a>
+    <a class="btn" href="https://www.facebook.com/georgedarlingphotography">Facebook</a>
     <br />
   </div>
 </template>
