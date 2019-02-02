@@ -20,3 +20,6 @@ selenium-debug.log
 photos/
 static/large/
 static/small/
+
+# Data files
+data*.json

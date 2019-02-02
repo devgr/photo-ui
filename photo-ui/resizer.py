@@ -30,8 +30,8 @@ def resize_and_save(reprocess, image, filename, prefix, width, height, quality):
     image.save(new_path, 'JPEG', quality=quality)
     print('Saved {}'.format(new_path))
 
-def main(reprocess):
-    for filename in glob.iglob('photos/**/*.jp*g', recursive=True):
+def process_files(file_list, reprocess):
+    for filename in file_list:
         if should_skip(reprocess, filename, ['small', 'large']):
             continue
 
@@ -60,7 +60,15 @@ def main(reprocess):
 
 if __name__ == '__main__':
     reprocess = False
-    if len(sys.argv) > 1:
-        if sys.argv[1] == '-a':
+    file_list = sys.argv
+    file_list.pop(0)
+
+    if len(file_list) > 0:
+        if file_list[0] == '-a':
             reprocess = True
-    main(reprocess)
+            file_list.pop(0)
+
+    if not file_list:
+        file_list = glob.iglob('photos/**/*.jp*g', recursive=True)
+
+    process_files(file_list, reprocess)
