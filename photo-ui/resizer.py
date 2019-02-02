@@ -31,7 +31,7 @@ def resize_and_save(reprocess, image, filename, prefix, width, height, quality):
     print('Saved {}'.format(new_path))
 
 def main(reprocess):
-    for filename in glob.iglob('photos/Portfolio/**/*.jp*g', recursive=True):
+    for filename in glob.iglob('photos/**/*.jp*g', recursive=True):
         if should_skip(reprocess, filename, ['small', 'large']):
             continue
 

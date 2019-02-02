@@ -1,8 +1,8 @@
 <template>
   <span>
-    <span class="v-aligned"></span><img class="img-card v-aligned" :src="config.imgSrc" v-on:click="expandImage = true" />
+    <span class="v-aligned"></span><img class="img-card v-aligned" :src="'/static/small/' + config.path" v-on:click="expandImage = true" />
     <div v-if="expandImage" class="full-screen" v-on:click="expandImage = false" />
-    <img v-if="expandImage" :src="config.bigSrc" class="full-screen" v-on:click="expandImage = false" />
+    <img v-if="expandImage" :src="'/static/large/' + config.path" class="full-screen" v-on:click="expandImage = false" />
   </span>
 </template>
 

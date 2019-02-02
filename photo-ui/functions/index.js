@@ -3,9 +3,9 @@ const nodemailer = require('nodemailer')
 
 // 1. https://www.google.com/settings/security/lesssecureapps
 // 2. https://accounts.google.com/DisplayUnlockCaptcha
-const from = ''
+const from = 'notification72378@gmail.com'
+const pw = 'thisisnotthepasswordyouarelookingfor'
 const to = 'info@georgedarling.photos'
-const pw = ''
 const mailTransport = nodemailer.createTransport({
   service: 'gmail',
   auth: {

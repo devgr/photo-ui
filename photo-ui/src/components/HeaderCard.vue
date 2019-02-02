@@ -1,11 +1,12 @@
 <template>
   <div class="card-body">
-    <h1>George Darling Photography</h1>
-    <p class="subtitle">Nashville, TN based photographer for portraits, events, and music.</p>
+    <h1>{{ config.heading }}</h1>
+    <p class="subtitle">{{ config.subtitle }}</p>
     <br />
-    <a v-on:click="contact();" class="btn">Contact</a>
-    <a class="btn" href="https://www.instagram.com/georgedphotos/">Instagram</a>
-    <a class="btn" href="https://www.facebook.com/georgedarlingphotography">Facebook</a>
+    <a v-on:click="contact();" class="btn">{{ config.contactBtnText }}</a>
+    <a v-for="(socialBtn, key) in config.socialBtns" class="btn" :href="socialBtn.href" :key="key">
+      {{ socialBtn.text }}
+    </a>
     <br />
   </div>
 </template>
