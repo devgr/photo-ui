@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <transition-group name="card-list" class="home" tag="div">
     <card v-for="(config, key) in cards" :config="config" :key="key"></card>
-  </div>
+  </transition-group>
 </template>
 
 <script>
@@ -25,5 +25,17 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.card-list-move {
+  transition: transform 1s;
+}
+.card-list-leave-active {
+  transition: none;
+}
+.card-list-enter-active {
+  transition: opacity 1s;
+}
+.card-list-enter {
+  opacity: 0;
 }
 </style>

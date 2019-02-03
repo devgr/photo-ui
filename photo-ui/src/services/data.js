@@ -22,7 +22,8 @@ class DataManager {
               href: 'https://www.facebook.com/georgedarlingphotography'
             }
           ]
-        }
+        },
+        {}, {}, {}, {}, {}, {}, {}
       ],
       contact: [
         {
