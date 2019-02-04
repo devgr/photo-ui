@@ -28,7 +28,7 @@ export default {
   flex-grow: 1;
 }
 .card{
-  height: 400px;
+  height: 430px;
   margin: 4px 2px;
   white-space: nowrap;
   text-align: center;

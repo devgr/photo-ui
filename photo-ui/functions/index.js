@@ -3,9 +3,9 @@ const nodemailer = require('nodemailer')
 
 // 1. https://www.google.com/settings/security/lesssecureapps
 // 2. https://accounts.google.com/DisplayUnlockCaptcha
-const from = ''
+const from = 'thisisnottheemailyouarelookingfor@gmail.com'
+const pw = 'thisisnotthepasswordyouarelookingfor'
 const to = 'info@georgedarling.photos'
-const pw = ''
 const mailTransport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -22,7 +22,7 @@ exports.submitForm = functions.https.onRequest((req, res) => {
     const contactMessage = req.body.message
 
     if (!contactName || !contactEmail || !contactMessage) {
-      res.status(404).send('Method not found.')
+      res.status(400).send('Bad request.')
     } else {
       const mailOptions = {
         from: `${APP_NAME} <${from}>`,
@@ -33,12 +33,15 @@ exports.submitForm = functions.https.onRequest((req, res) => {
       mailOptions.text = `Name: ${contactName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`
       mailTransport.sendMail(mailOptions, (err, response) => {
         if (err) {
+          console.log('An error occurred when trying to send email.')
+          console.log('Email text: ' + mailOptions.text)
+          console.log(err)
           console.log(err.name)
           console.log(err.details)
           console.log(err.data)
           console.log(err.response)
           console.log(response)
-          res.status(500).send(err.name)
+          res.status(500).send('Server error.')
         } else {
           res.status(200).send('Success')
         }

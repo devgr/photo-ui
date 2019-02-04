@@ -15,3 +15,11 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+
+# Photo files
+photos/
+static/large/
+static/small/
+
+# Data files
+data*.json
