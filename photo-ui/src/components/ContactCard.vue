@@ -10,7 +10,9 @@
     <textarea v-model="message" v-on:blur="checkMessage();"
       :class="{ reject: invalidMessage }" placeholder="Message" />
     <br />
-    <a v-on:click="submitContact();" class="btn" :class="{ success: submitSuccess, reject: submitFailure }">Submit</a>
+    <a v-on:click="submitContact();" class="btn" :class="{ success: submitSuccess, reject: submitFailure, waiting: submitWaiting }">Submit</a>
+    <p v-if="submitSuccess" class="result-text">Submitted ✨</p>
+    <p v-if="submitFailure" class="result-text">Error 😢</p>
   </div>
 </template>
 
@@ -28,7 +30,8 @@ export default {
       invalidEmail: false,
       invalidMessage: false,
       submitSuccess: false,
-      submitFailure: false
+      submitFailure: false,
+      submitWaiting: false
     }
   },
   methods: {
@@ -39,12 +42,19 @@ export default {
       if (this.checkName() || this.checkEmail() || this.checkMessage()) {
         return false
       }
+      if (this.submitWaiting) {
+        return false
+      }
+
+      this.submitWaiting = true
       dataManager.submitContact(this.name, this.email, this.message).then(() => {
         this.submitSuccess = true
         this.submitFailure = false
+        this.submitWaiting = false
       }, () => {
         this.submitFailure = true
         this.submitSuccess = false
+        this.submitWaiting = false
       })
     },
     checkName () {
@@ -86,8 +96,9 @@ input, textarea{
   padding: 4px;
   font-size: 14px;
 }
-input.reject, textarea.reject{
+input.reject, textarea.reject, a.btn.reject{
   border-color: #d46a6a;
+  border-width: 2px;
 }
 .card-body{
   margin: 10px;
@@ -99,8 +110,13 @@ input.reject, textarea.reject{
 }
 a.btn.success{
   border-color: #55aa55;
+  border-width: 2px;
 }
-a.btn.waiting{
+a.btn.waiting, a.btn.waiting:hover, a.btn.waiting:active {
   color: #999;
+  cursor: none;
+}
+p.result-text {
+  font-style: italic;
 }
 </style>

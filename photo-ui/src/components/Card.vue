@@ -30,7 +30,12 @@ export default {
 .card{
   height: 430px;
   margin: 4px 2px;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
   text-align: center;
+}
+@media (max-width: 450px) {
+  .card{
+    height: 380px;
+  }
 }
 </style>

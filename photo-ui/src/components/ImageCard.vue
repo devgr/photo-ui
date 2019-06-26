@@ -50,4 +50,10 @@ div.full-screen {
   background-color: #000000bb;
   cursor: pointer;
 }
+@media (max-width: 492px) {
+  img.img-card{
+    max-width: 95vw;
+    max-height: 350px;
+  }
+}
 </style>

@@ -47,4 +47,10 @@ div.cover>h1{
   margin: auto;
   display: inline-block;
 }
+@media (max-width: 450px) {
+  div.background-img{
+    width: 85vw;
+    height: 85vw;
+  }
+}
 </style>

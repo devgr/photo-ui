@@ -33,7 +33,6 @@ h1 {
 }
 body {
   margin: 0;
-  min-width: 480px;
   background-color: #383838;
   box-sizing: border-box;
 }

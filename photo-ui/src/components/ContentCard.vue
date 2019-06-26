@@ -38,4 +38,10 @@ div.inner{
   border-radius: 5px;
   padding: 5px;
 }
+@media (max-width: 450px) {
+  div.outer{
+    width: 85vw;
+    height: 85vw;
+  }
+}
 </style>
