@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import dataManager from '@/services/data'
 export default {
   name: 'CategoryCard',
   props: ['config'],
@@ -20,7 +19,7 @@ export default {
   },
   methods: {
     transition () {
-      dataManager.toView(this.config.to)
+      this.$router.push(this.config.to)
     }
   }
 }

@@ -2,13 +2,16 @@
   <div class="card-body">
     <h1>{{ config.title }}</h1>
     <br />
+    <div v-if="config.text">
+      <p class="subtitle">{{ config.text }}<a v-if="config.link" :href="config.link.href">{{ config.link.text }}</a></p>
+      <br />
+    </div>
     <a v-on:click="home();" class="btn">&lt; Back</a>
     <br />
   </div>
 </template>
 
 <script>
-import dataManager from '@/services/data'
 export default {
   name: 'SubHeaderCard',
   props: ['config'],
@@ -17,7 +20,7 @@ export default {
   },
   methods: {
     home () {
-      dataManager.home()
+      this.$router.push('home')
     }
   }
 }

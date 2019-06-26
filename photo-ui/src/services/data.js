@@ -4,6 +4,7 @@ import Vue from 'vue'
 class DataManager {
   constructor () {
     // initial hardcoded data while dynamic data loads
+    this.view = ''
     this.allViews = {
       home: [
         {
@@ -36,32 +37,23 @@ class DataManager {
     this.data = {
       cards: []
     }
-    this.home()
+    this.toView('home')
   }
 
   init () {
     this.database = firebase.database()
-    this.database.ref('/dev').once('value').then((snapshot) => {
+    this.database.ref('/0001').once('value').then((snapshot) => {
       this.allViews = snapshot.val()
-      this.home()
+      this.toView(this.view) // Show view now that data is loaded
     })
   }
 
-  home () {
-    if (this.allViews.home) {
-      this.data.cards = this.allViews.home
-    }
-  }
-
-  contact () {
-    if (this.allViews.contact) {
-      this.data.cards = this.allViews.contact
-    }
-  }
-
   toView (viewName) {
+    this.view = viewName
     if (this.allViews.hasOwnProperty(viewName)) {
       this.data.cards = this.allViews[viewName]
+    } else {
+      this.data.cards = this.allViews.home
     }
   }
 

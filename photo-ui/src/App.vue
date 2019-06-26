@@ -76,4 +76,7 @@ span.v-aligned{
 .subtitle{
   font-style: italic;
 }
+.subtitle a{
+  color: #ddd;
+}
 </style>

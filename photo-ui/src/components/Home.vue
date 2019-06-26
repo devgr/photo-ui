@@ -11,7 +11,7 @@ export default {
   name: 'Home',
   components: { Card },
   data () {
-    dataManager.init()
+    console.log(dataManager.data)
     return dataManager.data
   }
 }

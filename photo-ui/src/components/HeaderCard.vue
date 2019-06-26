@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import dataManager from '@/services/data'
 export default {
   name: 'HeaderCard',
   props: ['config'],
@@ -21,7 +20,7 @@ export default {
   },
   methods: {
     contact () {
-      dataManager.contact()
+      this.$router.push('/contact')
     }
   }
 }

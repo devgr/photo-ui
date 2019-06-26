@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     home () {
-      dataManager.home()
+      this.$router.push('home')
     },
     submitContact () {
       if (this.checkName() || this.checkEmail() || this.checkMessage()) {

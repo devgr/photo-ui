@@ -3,7 +3,7 @@
 Vue.js app and Google Firebase functions.
 
 ## Firebase Functions
-Follow the instructions on https://firebase.google.com/docs/functions/get-started
+Based on the instructions in https://firebase.google.com/docs/functions/get-started
 Setup:
 ```
 nvm use --lts
@@ -15,6 +15,9 @@ firebase login
 cd functions
 npm install
 ```
+
+Update credentials in functions/index.js before deploying.
+
 Deploy:
 ```
 firebase deploy --only functions
