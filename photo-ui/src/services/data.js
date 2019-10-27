@@ -42,7 +42,7 @@ class DataManager {
 
   init () {
     this.database = firebase.database()
-    this.database.ref('/0001').once('value').then((snapshot) => {
+    this.database.ref('/0002').once('value').then((snapshot) => {
       this.allViews = snapshot.val()
       this.toView(this.view) // Show view now that data is loaded
     })

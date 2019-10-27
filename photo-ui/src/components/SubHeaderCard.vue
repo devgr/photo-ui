@@ -3,10 +3,10 @@
     <h1>{{ config.title }}</h1>
     <br />
     <div v-if="config.text">
-      <p class="subtitle">{{ config.text }}<a v-if="config.link" :href="config.link.href">{{ config.link.text }}</a></p>
+      <p class="subtitle" v-html="config.text"></p>
       <br />
     </div>
-    <a v-on:click="home();" class="btn">&lt; Back</a>
+    <a v-if="!config.hideBackButton" v-on:click="home();" class="btn">&lt; Back</a>
     <br />
   </div>
 </template>
