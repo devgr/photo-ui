@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       styleObj: {
-        background: 'no-repeat center/100% url("/static/small/photos/' + this.config.path + '")'
+        background: 'no-repeat center/100% url("/small/photos/' + this.config.path + '")'
       }
     }
   },

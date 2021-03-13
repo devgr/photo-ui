@@ -14,7 +14,7 @@ def make_dirs(filename):
                 raise
 
 def get_path(filename, prefix):
-    return os.path.join('static', prefix, filename)
+    return os.path.join('public', prefix, filename)
 
 def should_skip(reprocess, filename, prefixes):
     for prefix in prefixes:

@@ -1,4 +1,4 @@
-import * as firebase from 'firebase'
+import firebase from 'firebase/app'
 import Vue from 'vue'
 
 class DataManager {
@@ -41,7 +41,7 @@ class DataManager {
 
   init () {
     this.database = firebase.database()
-    this.database.ref('/dev').once('value').then((snapshot) => {
+    this.database.ref('/0002').once('value').then((snapshot) => {
       this.allViews = snapshot.val()
       this.home()
     })
@@ -60,7 +60,7 @@ class DataManager {
   }
 
   toView (viewName) {
-    if (this.allViews.hasOwnProperty(viewName)) {
+    if (Object.prototype.hasOwnProperty.call(this.allViews, viewName)) {
       this.data.cards = this.allViews[viewName]
     }
   }

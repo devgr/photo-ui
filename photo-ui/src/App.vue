@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import * as firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/database'
 
 var config = {
   apiKey: 'AIzaSyAJmsIRLUBUXxBn1yqQLnEb115kHLuernU',
