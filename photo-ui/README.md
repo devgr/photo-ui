@@ -5,6 +5,7 @@ Vue.js app and Google Firebase functions.
 ## Firebase Functions
 Follow the instructions on https://firebase.google.com/docs/functions/get-started
 Setup:
+
 ```
 nvm use --lts
 npm install firebase-functions@latest firebase-admin@latest --save
@@ -15,7 +16,9 @@ firebase login
 cd functions
 npm install
 ```
+
 Deploy:
+
 ```
 firebase deploy --only functions
 ```
@@ -29,7 +32,7 @@ https://firebase.google.com/docs/hosting/quickstart
 
 See the hosting section in `firebase.json`. When you do the vue build (see below),
 everything gets bundled and copied into the `dist/` directory. That's what will get deployed.
-`firebase deploy`
+`firebase deploy --only hosting`
 
 ## Vue.js
 
