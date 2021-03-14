@@ -39,11 +39,11 @@ class DataManager {
     this.home()
   }
 
-  init () {
+  init (initialView) {
     this.database = firebase.database()
     this.database.ref('/0004').once('value').then((snapshot) => {
       this.allViews = snapshot.val()
-      this.home()
+      this.toView(initialView)
     })
   }
 
@@ -60,8 +60,10 @@ class DataManager {
   }
 
   toView (viewName) {
-    if (Object.prototype.hasOwnProperty.call(this.allViews, viewName)) {
+    if (viewName && Object.prototype.hasOwnProperty.call(this.allViews, viewName)) {
       this.data.cards = this.allViews[viewName]
+    } else {
+      this.home()
     }
   }
 

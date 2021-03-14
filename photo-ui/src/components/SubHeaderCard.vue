@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import dataManager from '@/services/data'
 export default {
   name: 'SubHeaderCard',
   props: ['config'],
@@ -18,7 +17,7 @@ export default {
   },
   methods: {
     home () {
-      dataManager.home()
+      this.$router.push('/')
     }
   }
 }

@@ -11,8 +11,17 @@ export default {
   name: 'Home',
   components: { Card },
   data () {
-    dataManager.init()
+    const { cardSet } = this.$route.params // will be undefined when route is '/'
+    dataManager.init(cardSet)
     return dataManager.data
+  },
+  watch: {
+    $route(to, from) {
+      console.log('watching')
+      console.log(from)
+      console.log(to)
+      dataManager.toView(to.params.cardSet)
+    }
   }
 }
 </script>
