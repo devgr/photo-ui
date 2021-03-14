@@ -2,7 +2,8 @@
   <div class="card-body">
     <h1>{{ config.title }}</h1>
     <br />
-    <a v-on:click="home();" class="btn">&lt; Back</a>
+    <div v-if="config.text" v-html="config.text" class="sub-header-card_extra-content" />
+    <a v-if="!config.hideBackButton" v-on:click="home();" class="btn">&lt; Back</a>
     <br />
   </div>
 </template>
@@ -25,5 +26,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.sub-header-card_extra-content {
+  font-style: italic;
+}
 </style>

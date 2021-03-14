@@ -38,8 +38,8 @@ body {
   background-color: #383838;
   box-sizing: border-box;
 }
-#app {
-
+a {
+  color: #ddd;
 }
 .btn {
   display: block;
